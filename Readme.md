@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Borys Avsiukevych](https://up.htmlacademy.ru/react/3/user/835195).
-* Наставник: `Неизвестно`.
+* Наставник: [Константин Каруна](https://up.htmlacademy.ru/react/3/user/74977).
 
 ---
 
