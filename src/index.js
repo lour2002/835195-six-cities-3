@@ -2,11 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
 
-const countOffers = 696;
+const offersCount = 3;
+const rentalOffers = [
+  `Beautiful & luxurious apartment at great location`,
+  `Canal View Prinsengracht`,
+  `Wood and stone place`
+];
 
 ReactDOM.render(
     <App
-      countOffers={countOffers}
+      offersCount={offersCount}
+      rentalOffers={rentalOffers}
     />,
     document.getElementById(`root`)
 );
