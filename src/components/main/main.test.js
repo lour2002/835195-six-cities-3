@@ -1,7 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
+
 import Main from "./main.jsx";
-import {RENTAL_OFFERS, OFFERS_COUNT} from "../../test.data";
+import {RENTAL_OFFERS, OFFERS_COUNT} from "../../test.data.js";
 
 
 it(`Render Place`, () => {

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Place from "../place/place.jsx";
 
+const onPlaceTitleClick = () => {};
+
 const Main = ({offersCount, rentalOffers}) => {
   return (
     <main className="page__main page__main--index">
@@ -13,7 +15,11 @@ const Main = ({offersCount, rentalOffers}) => {
             <b className="places__found">{offersCount} places to stay in Budapest</b>
             <div className="cities__places-list places__list tabs__content">
               {rentalOffers.map((rentalOffer, index) => (
-                <Place key={rentalOffer + index} placeName={rentalOffer} />
+                <Place
+                  key={rentalOffer + index}
+                  placeName={rentalOffer}
+                  onTitleClick={onPlaceTitleClick}
+                />
               ))}
             </div>
           </section>
