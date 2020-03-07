@@ -1,18 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
-
-const offersCount = 3;
-const rentalOffers = [
-  `Beautiful & luxurious apartment at great location`,
-  `Canal View Prinsengracht`,
-  `Wood and stone place`
-];
+import {RENTAL_OFFERS, OFFERS_COUNT} from "./test.data";
 
 ReactDOM.render(
     <App
-      offersCount={offersCount}
-      rentalOffers={rentalOffers}
+      offersCount={OFFERS_COUNT}
+      rentalOffers={RENTAL_OFFERS}
     />,
     document.getElementById(`root`)
 );
