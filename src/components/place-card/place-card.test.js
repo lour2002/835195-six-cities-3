@@ -1,17 +1,17 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import Place from "./place.jsx";
+import PlaceCard from "./place-card.jsx";
 import {RENTAL_OFFERS} from "../../test.data.js";
 
 
-it(`Render Place`, () => {
-  const place = renderer
-    .create(<Place
+it(`Render Place Card`, () => {
+  const placeCard = renderer
+    .create(<PlaceCard
       placeName={RENTAL_OFFERS[0]}
       onTitleClick={() => {}}
     />)
     .toJSON();
 
-  expect(place).toMatchSnapshot();
+  expect(placeCard).toMatchSnapshot();
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Place from "../place/place.jsx";
+import PlaceCard from "../place-card/place-card.jsx";
 
 const onPlaceTitleClick = () => {};
 
@@ -15,7 +15,7 @@ const Main = ({offersCount, rentalOffers}) => {
             <b className="places__found">{offersCount} places to stay in Budapest</b>
             <div className="cities__places-list places__list tabs__content">
               {rentalOffers.map((rentalOffer, index) => (
-                <Place
+                <PlaceCard
                   key={rentalOffer + index}
                   placeName={rentalOffer}
                   onTitleClick={onPlaceTitleClick}
