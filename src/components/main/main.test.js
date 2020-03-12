@@ -2,15 +2,12 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import Main from "./main.jsx";
-import {RENTAL_OFFERS, OFFERS_COUNT} from "../../test.data.js";
+import {PLACE_CARD} from "../../mocks/test.mocks.js";
 
 
-it(`Render Place`, () => {
+it(`Render Main`, () => {
   const place = renderer
-    .create(<Main
-      offersCount={OFFERS_COUNT}
-      rentalOffers={RENTAL_OFFERS}
-    />)
+    .create(<Main offers={ [PLACE_CARD] }/>)
     .toJSON();
 
   expect(place).toMatchSnapshot();

@@ -1,11 +1,25 @@
 import React from 'react';
+import PropTypes from "prop-types";
+
 import Main from "../main/main.jsx";
-// eslint-disable-next-line react/prop-types
-const App = ({offersCount, rentalOffers}) => {
+import {PLACE_TYPE} from '../../utils/consts.js';
+
+const App = ({offers}) => {
   return <Main
-    offersCount={offersCount}
-    rentalOffers={rentalOffers}
+    offers={offers}
   />;
+};
+
+App.propTypes = {
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    smallImage: PropTypes.string.isRequired,
+    raiting: PropTypes.number.isRequired,
+    type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
+    isPremium: PropTypes.bool.isRequired,
+  })).isRequired
 };
 
 export default App;

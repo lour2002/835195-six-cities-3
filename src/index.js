@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
-import {RENTAL_OFFERS, OFFERS_COUNT} from "./test.data.js";
+import {offers} from './mocks/offers.js';
 
 ReactDOM.render(
     <App
-      offersCount={OFFERS_COUNT}
-      rentalOffers={RENTAL_OFFERS}
+      offers={offers}
     />,
     document.getElementById(`root`)
 );

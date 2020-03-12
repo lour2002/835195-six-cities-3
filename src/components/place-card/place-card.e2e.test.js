@@ -3,20 +3,20 @@ import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import PlaceCard from "./place-card.jsx";
-import {RENTAL_OFFERS} from "../../test.data.js";
+import {PLACE_CARD} from "../../mocks/test.mocks.js";
 
 Enzyme.configure({
   adapter: new Adapter(),
 });
 
 it(`Should welcome button be pressed`, () => {
-  const onPlaceTitleClick = jest.fn();
+  const onPlaceCardTitleClick = jest.fn();
 
-  const placeComponent = shallow(<PlaceCard placeName={RENTAL_OFFERS[0]} onTitleClick={onPlaceTitleClick}/>);
+  const placeComponent = shallow(<PlaceCard offer={PLACE_CARD} onPlaceCardTitleClick={onPlaceCardTitleClick}/>);
 
   const placeHeader = placeComponent.find(`h2.place-card__name`);
 
   placeHeader.simulate(`click`);
 
-  expect(onPlaceTitleClick).toHaveBeenCalledTimes(1);
+  expect(onPlaceCardTitleClick).toHaveBeenCalledTimes(1);
 });

@@ -2,13 +2,12 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import App from "./app.jsx";
-import {RENTAL_OFFERS, OFFERS_COUNT} from "../../test.data.js";
+import {PLACE_CARD} from "../../mocks/test.mocks.js";
 
-it(`Render Place`, () => {
+it(`Render App`, () => {
   const place = renderer
     .create(<App
-      offersCount={OFFERS_COUNT}
-      rentalOffers={RENTAL_OFFERS}
+      offers={[PLACE_CARD]}
     />)
     .toJSON();
 
