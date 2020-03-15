@@ -31,9 +31,9 @@ it(`Should welcome button be pressed`, () => {
 
   placeCard.simulate(`mouseenter`);
   expect(onPlaceCardMouseEnter).toHaveBeenCalledTimes(1);
-  expect(onPlaceCardMouseEnter.mock.calls[0][0]).toMatchObject(PLACE_CARD);
+  expect({value: onPlaceCardMouseEnter.mock.calls[0][0].id}).toMatchObject({value: PLACE_CARD.id});
 
   placeCard.simulate(`mouseleave`);
   expect(onPlaceCardMouseLeave).toHaveBeenCalledTimes(1);
-  expect(onPlaceCardMouseLeave.mock.calls[0][0]).toMatchObject(null);
+  expect({value: onPlaceCardMouseLeave.mock.calls[0][0]}).toMatchObject({value: null});
 });

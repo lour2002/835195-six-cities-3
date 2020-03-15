@@ -12,10 +12,10 @@ class OffersList extends PureComponent {
 
     this._placeCardMouseEnterHandler = this._placeCardMouseEnterHandler.bind(this);
     this._placeCardMouseLeaveHandler = this._placeCardMouseLeaveHandler.bind(this);
-    this._placeCardHeaderClickHandler = this._placeCardHeaderClickHandler.bind(this);
+    this._placeCardTitleClickHandler = this._placeCardTitleClickHandler.bind(this);
   }
 
-  _placeCardHeaderClickHandler() {}
+  _placeCardTitleClickHandler() {}
 
   _placeCardMouseEnterHandler(offer) {
     this.setState({offer});
@@ -33,7 +33,7 @@ class OffersList extends PureComponent {
           <PlaceCard
             key={offer.id}
             offer={offer}
-            onPlaceHeaderClick={this._placeCardHeaderClickHandler}
+            onPlaceCardTitleClick={this._placeCardTitleClickHandler}
             onPlaceCardMouseEnter={this._placeCardMouseEnterHandler}
             onPlaceCardMouseLeave={this._placeCardMouseLeaveHandler}
           />
