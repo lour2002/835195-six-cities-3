@@ -16,7 +16,7 @@ App.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     smallImage: PropTypes.string.isRequired,
-    raiting: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
     type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
     isPremium: PropTypes.bool.isRequired,
   })).isRequired

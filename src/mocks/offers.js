@@ -4,7 +4,7 @@ export const offers = [
     name: `Beautiful &amp; luxurious apartment at great location`,
     price: 120,
     smallImage: `img/apartment-01.jpg`,
-    raiting: 80,
+    rating: 80,
     type: `Apartment`,
     isPremium: true
   },
@@ -13,7 +13,7 @@ export const offers = [
     name: `Wood and stone place`,
     price: 80,
     smallImage: `img/room.jpg`,
-    raiting: 80,
+    rating: 80,
     type: `Private room`,
     isPremium: false
   },
@@ -22,7 +22,7 @@ export const offers = [
     name: `Canal View Prinsengracht`,
     price: 132,
     smallImage: `img/apartment-02.jpg`,
-    raiting: 80,
+    rating: 80,
     type: `Apartment`,
     isPremium: false
   },
@@ -31,7 +31,7 @@ export const offers = [
     name: `Nice, cozy, warm big bed apartment`,
     price: 180,
     smallImage: `img/apartment-03.jpg`,
-    raiting: 90,
+    rating: 90,
     type: `Apartment`,
     isPremium: true
   }

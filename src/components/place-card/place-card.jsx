@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import {PLACE_TYPE} from '../../utils/consts';
 
 const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlaceCardMouseLeave}) => {
-  const {name, price, smallImage, raiting, type, isPremium} = offer;
+  const {name, price, smallImage, rating, type, isPremium} = offer;
   return (
     <article
       className="cities__place-card place-card"
@@ -40,7 +40,7 @@ const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlace
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${raiting}%`}}></span>
+            <span style={{width: `${rating}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ PlaceCard.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     smallImage: PropTypes.string.isRequired,
-    raiting: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
     type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
     isPremium: PropTypes.bool.isRequired,
   }).isRequired,

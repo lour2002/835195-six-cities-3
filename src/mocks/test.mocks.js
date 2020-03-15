@@ -5,7 +5,7 @@ export const PLACE_CARD = {
   name: `Beautiful &amp; luxurious apartment at great location`,
   price: 120,
   smallImage: `img/apartment-01.jpg`,
-  raiting: 80,
+  rating: 80,
   type: PLACE_TYPE.APARTMENT,
   isPremium: true
 };
