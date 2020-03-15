@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import {PLACE_TYPE} from '../../utils/consts.js';
 import OffersList from "../offers-list/offers-list";
+import {OfferShape} from "../../utils/settings";
 
 const Main = ({offers}) => {
   return (
@@ -22,15 +22,7 @@ const Main = ({offers}) => {
 };
 
 Main.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    smallImage: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
-    isPremium: PropTypes.bool.isRequired,
-  })).isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferShape)).isRequired
 };
 
 export default Main;

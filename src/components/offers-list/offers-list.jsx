@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from "prop-types";
 
 import PlaceCard from "../place-card/place-card.jsx";
-import {PLACE_TYPE} from '../../utils/consts.js';
+import {OfferShape} from "../../utils/settings";
 
 class OffersList extends PureComponent {
   constructor(props) {
@@ -10,18 +10,18 @@ class OffersList extends PureComponent {
 
     this.state = {offer: null};
 
-    this._placeCardMouseEnterHandler = this._placeCardMouseEnterHandler.bind(this);
-    this._placeCardMouseLeaveHandler = this._placeCardMouseLeaveHandler.bind(this);
-    this._placeCardTitleClickHandler = this._placeCardTitleClickHandler.bind(this);
+    this._placeCardMouseEnterHandler = this.placeCardMouseEnterHandler.bind(this);
+    this._placeCardMouseLeaveHandler = this.placeCardMouseLeaveHandler.bind(this);
+    this._placeCardTitleClickHandler = this.placeCardTitleClickHandler.bind(this);
   }
 
-  _placeCardTitleClickHandler() {}
+  placeCardTitleClickHandler() {}
 
-  _placeCardMouseEnterHandler(offer) {
+  placeCardMouseEnterHandler(offer) {
     this.setState({offer});
   }
 
-  _placeCardMouseLeaveHandler(offer) {
+  placeCardMouseLeaveHandler(offer) {
     this.setState({offer});
   }
 
@@ -33,9 +33,9 @@ class OffersList extends PureComponent {
           <PlaceCard
             key={offer.id}
             offer={offer}
-            onPlaceCardTitleClick={this._placeCardTitleClickHandler}
-            onPlaceCardMouseEnter={this._placeCardMouseEnterHandler}
-            onPlaceCardMouseLeave={this._placeCardMouseLeaveHandler}
+            onPlaceCardTitleClick={this.placeCardTitleClickHandler}
+            onPlaceCardMouseEnter={this.placeCardMouseEnterHandler}
+            onPlaceCardMouseLeave={this.placeCardMouseLeaveHandler}
           />
         ))}
       </div>
@@ -44,15 +44,7 @@ class OffersList extends PureComponent {
 }
 
 OffersList.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    smallImage: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
-    isPremium: PropTypes.bool.isRequired,
-  })).isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferShape)).isRequired
 };
 
 export default OffersList;

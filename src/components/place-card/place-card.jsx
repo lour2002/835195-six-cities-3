@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import {PLACE_TYPE} from '../../utils/consts';
+import {OfferShape} from "../../utils/settings";
+import {calcRatingPercent} from "../../utils/helpers";
 
 const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlaceCardMouseLeave}) => {
   const {name, price, smallImage, rating, type, isPremium} = offer;
+
+  const ratingPercent = calcRatingPercent(rating);
+
   return (
     <article
       className="cities__place-card place-card"
@@ -40,7 +44,7 @@ const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlace
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}%`}}></span>
+            <span style={{width: `${ratingPercent}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -54,15 +58,7 @@ const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlace
 };
 
 PlaceCard.propTypes = {
-  offer: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    smallImage: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    type: PropTypes.oneOf([PLACE_TYPE.APARTMENT, PLACE_TYPE.PRIVATE_ROOM]).isRequired,
-    isPremium: PropTypes.bool.isRequired,
-  }).isRequired,
+  offer: PropTypes.shape(OfferShape).isRequired,
   onPlaceCardTitleClick: PropTypes.func.isRequired,
   onPlaceCardMouseEnter: PropTypes.func.isRequired,
   onPlaceCardMouseLeave: PropTypes.func.isRequired,
