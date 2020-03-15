@@ -3,10 +3,18 @@ import PropTypes from "prop-types";
 
 import {PLACE_TYPE} from '../../utils/consts';
 
-const PlaceCard = ({offer, onPlaceCardTitleClick}) => {
+const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlaceCardMouseLeave}) => {
   const {name, price, smallImage, raiting, type, isPremium} = offer;
   return (
-    <article className="cities__place-card place-card">
+    <article
+      className="cities__place-card place-card"
+      onMouseEnter={ () => {
+        onPlaceCardMouseEnter(offer);
+      }}
+      onMouseLeave={ () => {
+        onPlaceCardMouseLeave(null);
+      }}
+    >
       {isPremium &&
         <div className="place-card__mark">
           <span>Premium</span>
@@ -56,6 +64,8 @@ PlaceCard.propTypes = {
     isPremium: PropTypes.bool.isRequired,
   }).isRequired,
   onPlaceCardTitleClick: PropTypes.func.isRequired,
+  onPlaceCardMouseEnter: PropTypes.func.isRequired,
+  onPlaceCardMouseLeave: PropTypes.func.isRequired,
 };
 
 export default PlaceCard;
