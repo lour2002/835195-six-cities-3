@@ -7,16 +7,26 @@ const offers = [
     price: 120,
     smallImage: `img/apartment-01.jpg`,
     rating: 4.6,
-    isMarked: true,
     type: PLACE_TYPE.APARTMENT,
     isPremium: true,
     features: FEATURES,
     roomsCount: 3,
     membersCount: 4,
+    images: [
+      `img/room.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-02.jpg`,
+      `img/apartment-03.jpg`,
+      `img/studio-01.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-01.jpg`,
+    ],
     owner: {
       name: `Angelina 1`,
       avatar: `img/avatar-angelina.jpg`,
-      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.<br>
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
                     An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
       isTrust: true
     }
@@ -27,16 +37,23 @@ const offers = [
     price: 80,
     smallImage: `img/room.jpg`,
     rating: 3,
-    isMarked: false,
     type: PLACE_TYPE.ROOM,
     isPremium: false,
     features: FEATURES,
     roomsCount: 4,
     membersCount: 5,
+    images: [
+      `img/room.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-02.jpg`,
+      `img/apartment-03.jpg`,
+      `img/studio-01.jpg`,
+      `img/apartment-01.jpg`,
+    ],
     owner: {
       name: `Angelina 1`,
       avatar: `img/avatar-angelina.jpg`,
-      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.<br>
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
                     An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
       isTrust: true
     }
@@ -47,16 +64,23 @@ const offers = [
     price: 132,
     smallImage: `img/apartment-02.jpg`,
     rating: 5,
-    isMarked: false,
     type: PLACE_TYPE.HOTEL,
     isPremium: false,
     features: FEATURES,
     roomsCount: 2,
     membersCount: 1,
+    images: [
+      `img/room.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-02.jpg`,
+      `img/apartment-03.jpg`,
+      `img/studio-01.jpg`,
+      `img/apartment-01.jpg`,
+    ],
     owner: {
       name: `Angelina 1`,
       avatar: `img/avatar-angelina.jpg`,
-      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.<br>
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
                     An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
       isTrust: true
     }
@@ -67,16 +91,23 @@ const offers = [
     price: 180,
     smallImage: `img/apartment-03.jpg`,
     rating: 4,
-    isMarked: false,
     type: PLACE_TYPE.HOUSE,
     isPremium: true,
     features: FEATURES,
     roomsCount: 4,
     membersCount: 5,
+    images: [
+      `img/room.jpg`,
+      `img/apartment-01.jpg`,
+      `img/apartment-02.jpg`,
+      `img/apartment-03.jpg`,
+      `img/studio-01.jpg`,
+      `img/apartment-01.jpg`,
+    ],
     owner: {
       name: `Angelina 1`,
       avatar: `img/avatar-angelina.jpg`,
-      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.<br>
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
                     An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.`,
       isTrust: true
     }

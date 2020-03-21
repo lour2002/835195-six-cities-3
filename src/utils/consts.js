@@ -5,7 +5,7 @@ export const PLACE_TYPE = {
   HOUSE: `House`
 };
 
-export const FEATURES = {
+export const FEATURES_OBJ = {
   WIFI: `Wi-Fi`,
   WASHING_MACHINE: `Washing machine`,
   TOWELS: `Towels`,
@@ -18,4 +18,8 @@ export const FEATURES = {
   FRIDGE: `Fridge`
 };
 
+export const FEATURES = Object.values(FEATURES_OBJ);
+
 export const MAX_RATING = 5;
+
+export const MARKED_PLACE = [1, 3];

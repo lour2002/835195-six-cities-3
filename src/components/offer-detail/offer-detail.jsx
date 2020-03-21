@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 
 import {OfferShape} from "../../utils/settings";
 import {calcRatingPercent} from "../../utils/helpers";
+import {MARKED_PLACE} from "../../utils/consts";
 
 const OfferDetail = ({offer}) => {
   const MAX_DISPLAY_COUNT = 6;
 
-  const {isPremium, price, isMarked, rating, name, type, roomsCount, membersCount, features, images, owner} = offer;
+  const {id, isPremium, price, rating, name, type, roomsCount, membersCount, features, images, owner} = offer;
 
   const displayImages = images.slice(0, MAX_DISPLAY_COUNT);
   const ratingPercent = calcRatingPercent(rating);
+  const isMarked = MARKED_PLACE.includes(id);
 
   return (
     <section className="property">
@@ -93,6 +95,6 @@ const OfferDetail = ({offer}) => {
 
 OfferDetail.propTypes = {
   offer: PropTypes.shape(OfferShape).isRequired
-}
+};
 
 export default OfferDetail;

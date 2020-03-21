@@ -9,31 +9,37 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`Should welcome button be pressed`, () => {
+it(`Should title be pressed`, () => {
   const onPlaceCardTitleClick = jest.fn();
+  const placeComponent = shallow(
+      <PlaceCard
+        offer={PLACE_CARD}
+        onPlaceCardMouseEnter={() => {}}
+        onPlaceCardMouseLeave={() => {}}
+        onPlaceCardTitleClick={onPlaceCardTitleClick}
+      />);
+  const placeTitle = placeComponent.find(`h2.place-card__name`);
+
+  placeTitle.simulate(`click`);
+  expect(onPlaceCardTitleClick.mock.calls.length).toBe(1);
+});
+
+it(`Should welcome button be pressed`, () => {
   const onPlaceCardMouseEnter = jest.fn();
   const onPlaceCardMouseLeave = jest.fn();
 
   const placeComponent = shallow(
       <PlaceCard
         offer={PLACE_CARD}
-        onPlaceCardTitleClick={onPlaceCardTitleClick}
+        onPlaceCardTitleClick={() => {}}
         onPlaceCardMouseEnter={onPlaceCardMouseEnter}
         onPlaceCardMouseLeave={onPlaceCardMouseLeave}
       />
   );
 
-  const placeTitle = placeComponent.find(`h2.place-card__name`);
-  const placeCard = placeComponent.find(`article.place-card`);
-
-  placeTitle.simulate(`click`);
-  expect(onPlaceCardTitleClick).toHaveBeenCalledTimes(1);
-
-  placeCard.simulate(`mouseenter`);
+  placeComponent.simulate(`mouseenter`);
   expect(onPlaceCardMouseEnter).toHaveBeenCalledTimes(1);
-  expect({value: onPlaceCardMouseEnter.mock.calls[0][0].id}).toMatchObject({value: PLACE_CARD.id});
 
-  placeCard.simulate(`mouseleave`);
+  placeComponent.simulate(`mouseleave`);
   expect(onPlaceCardMouseLeave).toHaveBeenCalledTimes(1);
-  expect({value: onPlaceCardMouseLeave.mock.calls[0][0]}).toMatchObject({value: null});
 });

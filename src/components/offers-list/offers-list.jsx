@@ -10,12 +10,14 @@ class OffersList extends PureComponent {
 
     this.state = {offer: null};
 
-    this._placeCardMouseEnterHandler = this.placeCardMouseEnterHandler.bind(this);
-    this._placeCardMouseLeaveHandler = this.placeCardMouseLeaveHandler.bind(this);
-    this._placeCardTitleClickHandler = this.placeCardTitleClickHandler.bind(this);
+    this.placeCardMouseEnterHandler = this.placeCardMouseEnterHandler.bind(this);
+    this.placeCardMouseLeaveHandler = this.placeCardMouseLeaveHandler.bind(this);
+    this.placeCardTitleClickHandler = this.placeCardTitleClickHandler.bind(this);
   }
 
-  placeCardTitleClickHandler() {}
+  placeCardTitleClickHandler() {
+
+  }
 
   placeCardMouseEnterHandler(offer) {
     this.setState({offer});
@@ -27,15 +29,16 @@ class OffersList extends PureComponent {
 
   render() {
     const {offers} = this.props;
+    const {onPlaceCardTitleClick} = this.props;
     return (
       <div className="cities__places-list places__list tabs__content">
         {offers.map((offer) => (
           <PlaceCard
             key={offer.id}
             offer={offer}
-            onPlaceCardTitleClick={this.placeCardTitleClickHandler}
-            onPlaceCardMouseEnter={this.placeCardMouseEnterHandler}
-            onPlaceCardMouseLeave={this.placeCardMouseLeaveHandler}
+            onPlaceCardTitleClick={() => onPlaceCardTitleClick(offer)}
+            onPlaceCardMouseEnter={() => this.placeCardMouseEnterHandler(offer)}
+            onPlaceCardMouseLeave={() => this.placeCardMouseLeaveHandler(null)}
           />
         ))}
       </div>
@@ -44,7 +47,8 @@ class OffersList extends PureComponent {
 }
 
 OffersList.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape(OfferShape)).isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape(OfferShape)).isRequired,
+  onPlaceCardTitleClick: PropTypes.func.isRequired
 };
 
 export default OffersList;

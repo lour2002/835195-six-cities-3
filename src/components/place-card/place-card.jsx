@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-import {OfferShape} from "../../utils/settings";
-import {calcRatingPercent} from "../../utils/helpers";
+import {OfferShape} from "../../utils/settings.js";
+import {calcRatingPercent} from "../../utils/helpers.js";
+import {MARKED_PLACE} from "../../utils/consts.js";
 
 const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlaceCardMouseLeave}) => {
-  const {name, price, smallImage, rating, type, isPremium} = offer;
+  const {id, name, price, smallImage, rating, type, isPremium} = offer;
+  const isMarked = MARKED_PLACE.includes(id);
 
   const ratingPercent = calcRatingPercent(rating);
 
   return (
     <article
       className="cities__place-card place-card"
-      onMouseEnter={ () => {
-        onPlaceCardMouseEnter(offer);
-      }}
-      onMouseLeave={ () => {
-        onPlaceCardMouseLeave(null);
-      }}
+      onMouseEnter={ onPlaceCardMouseEnter }
+      onMouseLeave={ onPlaceCardMouseLeave }
     >
       {isPremium &&
         <div className="place-card__mark">
@@ -35,7 +33,7 @@ const PlaceCard = ({offer, onPlaceCardTitleClick, onPlaceCardMouseEnter, onPlace
             <b className="place-card__price-value">&euro;{ price }</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button button" type="button">
+          <button className={`place-card__bookmark-button button ${isMarked ? `place-card__bookmark-button--active` : ``}`} type="button">
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark" />
             </svg>
